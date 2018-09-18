@@ -5,15 +5,24 @@
   
 
   
-  <title>quickytools</title>
+  <title>mitmproxy on Sunday | quickytools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="quickytools">
-<meta property="og:url" content="https://quickytools.github.io/blog/index.html">
+  <meta name="description" content="Some days are for being lazyand plenty of code is not debuggable. Rather than refactoring inspection+hack often gets the job done. Here we trace network activty with mitmproxy">
+<meta name="keywords" content="mobile-networking,debugging,development,get-going,mitmproxy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mitmproxy on Sunday">
+<meta property="og:url" content="https://quickytools.github.io/blog/2018/09/17/mitmproxy-for-the-Greater-Good/index.html">
 <meta property="og:site_name" content="quickytools">
+<meta property="og:description" content="Some days are for being lazyand plenty of code is not debuggable. Rather than refactoring inspection+hack often gets the job done. Here we trace network activty with mitmproxy">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://assets-cdn.github.com/images/icons/emoji/unicode/1f441.png?v8">
+<meta property="og:image" content="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4bb.png?v8">
+<meta property="og:image" content="https://assets-cdn.github.com/images/icons/emoji/unicode/270c.png?v8">
+<meta property="og:updated_time" content="2018-09-18T00:49:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="quickytools">
+<meta name="twitter:title" content="mitmproxy on Sunday">
+<meta name="twitter:description" content="Some days are for being lazyand plenty of code is not debuggable. Rather than refactoring inspection+hack often gets the job done. Here we trace network activty with mitmproxy">
+<meta name="twitter:image" content="https://assets-cdn.github.com/images/icons/emoji/unicode/1f441.png?v8">
   
   
     <link rel="icon" href="images/favicon.ico">
@@ -62,9 +71,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-mitmproxy-for-the-Greater-Good" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-mitmproxy-for-the-Greater-Good" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/09/17/mitmproxy-for-the-Greater-Good/" class="article-date">
   <time datetime="2018-09-18T00:45:54.000Z" itemprop="datePublished">Sep 17 2018</time>
@@ -77,8 +84,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/09/17/mitmproxy-for-the-Greater-Good/">mitmproxy on Sunday</a>
+    <h1 class="article-title" itemprop="name">
+      mitmproxy on Sunday
     </h1>
   
 
@@ -87,14 +94,29 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Some-days-are-for-being-lazy"><a href="#Some-days-are-for-being-lazy" class="headerlink" title="Some days are for being lazy"></a>Some days are for being lazy</h2><p>and plenty of code is not debuggable. Rather than refactoring inspection+hack often gets the job done. Here we trace network activty with <code>mitmproxy</code></p>
-        
-          <p class="article-more-link">
-            <a href="/blog/2018/09/17/mitmproxy-for-the-Greater-Good/#more">there&#39;s more?!</a>
-          </p>
-        
+<a id="more"></a>
+<ol>
+<li>On OSX install mitmproxy with brew</li>
+<li>Run mitmdump on a specific port <code>mitmdump --server --listen-port 8081</code></li>
+<li>Configure the client<br>a. Turn off data<br>b. Edit the WIFI connection to use the mitm machine as a proxy</li>
+<li>Normal sites should work but for secure sites visit <code>mitm.it</code> on the client (follow <a href="https://docs.mitmproxy.org/stable/concepts-certificates/" target="_blank" rel="noopener">instructions</a>)<br>a. Download the appropriate cert listed<br>b. Install the cert proper (after removing previous certs)</li>
+<li><img class="github-emoji" style="display:inline;vertical-align:bottom" title="eye" alt="eye" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f441.png?v8" height="20" width="20"> <img class="github-emoji" style="display:inline;vertical-align:bottom" title="computer" alt="computer" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4bb.png?v8" height="20" width="20"></li>
+</ol>
+<h2 id="Scripting"><a href="#Scripting" class="headerlink" title="Scripting"></a>Scripting</h2><ol>
+<li>Install python3 and pip3</li>
+<li>Install mitmproxy python module <code>pip3 install mitmproxy</code></li>
+<li>Create <a href="/blog/2018/09/17/mitmproxy-for-the-Greater-Good/dump.py" title="script">script</a> for printing requests/responses</li>
+<li>Run the script <code>mitmdump --server --listen-port 8081 -s dump.py</code></li>
+<li><img class="github-emoji" style="display:inline;vertical-align:bottom" title="v" alt="v" src="https://assets-cdn.github.com/images/icons/emoji/unicode/270c.png?v8" height="20" width="20"></li>
+</ol>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a><a href="https://mitmproxy.readthedocs.io/en/v2.0.2/scripting/api.html" target="_blank" rel="noopener">API</a></h2>
       
     </div>
     <footer class="article-footer">
+      
+        <a class="article-suggest-edit" href="https://github.com/hueachilles/quickytools-blog/tree/master/source/_posts/mitmproxy-for-the-Greater-Good.md" target="_blank">
+          Edit
+        </a>
       
       <a data-url="https://quickytools.github.io/blog/2018/09/17/mitmproxy-for-the-Greater-Good/" data-id="cjm6zzcsq0004pk0khomjg0l8" class="article-share-link">Share</a>
       
@@ -104,93 +126,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Charting-JSON-with-Vega" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/08/17/Charting-JSON-with-Vega/" class="article-date">
-  <time datetime="2018-08-17T21:11:59.000Z" itemprop="datePublished">Aug 17 2018</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/08/17/Charting-JSON-with-Vega/">Charting JSON with Vega</a>
-    </h1>
+    <a href="/blog/2018/08/17/Charting-JSON-with-Vega/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Charting JSON with Vega</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="There-is-no-better"><a href="#There-is-no-better" class="headerlink" title="There is no better"></a>There is no better</h2><p>feeling than driving complex ideas with simple commands. While exploring <a href="https://github.com/tensorflow/tfjs-examples" target="_blank" rel="noopener">tfjs examples</a> the authors use <a href="https://vega.github.io/vega-lite/" target="_blank" rel="noopener">Vega-lite</a> to transform numbers into <img class="github-emoji" style="display:inline;vertical-align:bottom" title="eye" alt="eye" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f441.png?v8" height="20" width="20"> <img class="github-emoji" style="display:inline;vertical-align:bottom" title="candy" alt="candy" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f36c.png?v8" height="20" width="20">. Most JS charts are created manually using <a href="https://d3js.org/" target="_blank" rel="noopener">d3</a> or <a href="https://plot.ly/javascript/" target="_blank" rel="noopener">Plotly</a> but with Vega a specification file makes the <img class="github-emoji" style="display:inline;vertical-align:bottom" title="sparkles" alt="sparkles" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2728.png?v8" height="20" width="20"> happen (logic not required).</p>
-        
-          <p class="article-more-link">
-            <a href="/blog/2018/08/17/Charting-JSON-with-Vega/#more">there&#39;s more?!</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      <a data-url="https://quickytools.github.io/blog/2018/08/17/Charting-JSON-with-Vega/" data-id="cjm6zzcsn0003pk0k8mky66tn" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/data-visualization-vega-chart-graph/">data-visualization vega chart graph</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-ready-set-go" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/02/08/ready-set-go/" class="article-date">
-  <time datetime="2018-02-09T04:05:19.000Z" itemprop="datePublished">Feb 08 2018</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/02/08/ready-set-go/">Ready, set, go!</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="We-are-off"><a href="#We-are-off" class="headerlink" title="We are off"></a>We are off</h2><p>to a fresh start. It is going to be a great year. I can feel it.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-      <a data-url="https://quickytools.github.io/blog/2018/02/08/ready-set-go/" data-id="cjm6zzcss0005pk0kadv6a3dn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
