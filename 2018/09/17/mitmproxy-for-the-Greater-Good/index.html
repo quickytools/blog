@@ -8,21 +8,17 @@
   <title>mitmproxy on Sunday | quickytools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Some days are for being lazyand plenty of code is not debuggable. Rather than refactoring inspection+hack often gets the job done. Here we trace network activty with mitmproxy">
-<meta name="keywords" content="mobile-networking,debugging,development,get-going,mitmproxy">
+<meta name="keywords" content="get-going,mobile-networking,debugging,development,mitmproxy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mitmproxy on Sunday">
 <meta property="og:url" content="https://quickytools.github.io/blog/2018/09/17/mitmproxy-for-the-Greater-Good/index.html">
 <meta property="og:site_name" content="quickytools">
 <meta property="og:description" content="Some days are for being lazyand plenty of code is not debuggable. Rather than refactoring inspection+hack often gets the job done. Here we trace network activty with mitmproxy">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://assets-cdn.github.com/images/icons/emoji/unicode/1f441.png?v8">
-<meta property="og:image" content="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4bb.png?v8">
-<meta property="og:image" content="https://assets-cdn.github.com/images/icons/emoji/unicode/270c.png?v8">
-<meta property="og:updated_time" content="2018-09-18T00:49:17.000Z">
+<meta property="og:updated_time" content="2018-09-18T01:24:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mitmproxy on Sunday">
 <meta name="twitter:description" content="Some days are for being lazyand plenty of code is not debuggable. Rather than refactoring inspection+hack often gets the job done. Here we trace network activty with mitmproxy">
-<meta name="twitter:image" content="https://assets-cdn.github.com/images/icons/emoji/unicode/1f441.png?v8">
   
   
     <link rel="icon" href="images/favicon.ico">
@@ -100,16 +96,34 @@
 <li>Run mitmdump on a specific port <code>mitmdump --server --listen-port 8081</code></li>
 <li>Configure the client<br>a. Turn off data<br>b. Edit the WIFI connection to use the mitm machine as a proxy</li>
 <li>Normal sites should work but for secure sites visit <code>mitm.it</code> on the client (follow <a href="https://docs.mitmproxy.org/stable/concepts-certificates/" target="_blank" rel="noopener">instructions</a>)<br>a. Download the appropriate cert listed<br>b. Install the cert proper (after removing previous certs)</li>
-<li><img class="github-emoji" style="display:inline;vertical-align:bottom" title="eye" alt="eye" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f441.png?v8" height="20" width="20"> <img class="github-emoji" style="display:inline;vertical-align:bottom" title="computer" alt="computer" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4bb.png?v8" height="20" width="20"></li>
+<li><span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f441.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f441.png?v8">&#x1F441;</span> <span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f4bb.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4bb.png?v8">&#x1F4BB;</span></li>
 </ol>
-<h2 id="Scripting"><a href="#Scripting" class="headerlink" title="Scripting"></a>Scripting</h2><ol>
+<h3 id="Scripting"><a href="#Scripting" class="headerlink" title="Scripting"></a>Scripting</h3><ol>
 <li>Install python3 and pip3</li>
 <li>Install mitmproxy python module <code>pip3 install mitmproxy</code></li>
 <li>Create <a href="/blog/2018/09/17/mitmproxy-for-the-Greater-Good/dump.py" title="script">script</a> for printing requests/responses</li>
 <li>Run the script <code>mitmdump --server --listen-port 8081 -s dump.py</code></li>
-<li><img class="github-emoji" style="display:inline;vertical-align:bottom" title="v" alt="v" src="https://assets-cdn.github.com/images/icons/emoji/unicode/270c.png?v8" height="20" width="20"></li>
+<li><span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/270c.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/270c.png?v8">&#x270C;</span></li>
 </ol>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a><a href="https://mitmproxy.readthedocs.io/en/v2.0.2/scripting/api.html" target="_blank" rel="noopener">API</a></h2>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a><a href="https://mitmproxy.readthedocs.io/en/v2.0.2/scripting/api.html" target="_blank" rel="noopener">API</a></h2><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     <footer class="article-footer">
@@ -118,7 +132,7 @@
           Edit
         </a>
       
-      <a data-url="https://quickytools.github.io/blog/2018/09/17/mitmproxy-for-the-Greater-Good/" data-id="cjm6zzcsq0004pk0khomjg0l8" class="article-share-link">Share</a>
+      <a data-url="https://quickytools.github.io/blog/2018/09/17/mitmproxy-for-the-Greater-Good/" data-id="cjn3ugh7n0005260ka3x39bax" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/debugging/">debugging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/development/">development</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/get-going/">get-going</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/mitmproxy/">mitmproxy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/mobile-networking/">mobile-networking</a></li></ul>

@@ -7,17 +7,17 @@
   
   <title>Ready, set, go! | quickytools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="We are offto a fresh start. It is going to be a great year. I can feel it.">
+  <meta name="description" content="We are offto a fresh start. It is going to be a great year. I can feel it.          document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ready, set, go!">
 <meta property="og:url" content="https://quickytools.github.io/blog/2018/02/08/ready-set-go/index.html">
 <meta property="og:site_name" content="quickytools">
-<meta property="og:description" content="We are offto a fresh start. It is going to be a great year. I can feel it.">
+<meta property="og:description" content="We are offto a fresh start. It is going to be a great year. I can feel it.          document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-08-04T02:59:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ready, set, go!">
-<meta name="twitter:description" content="We are offto a fresh start. It is going to be a great year. I can feel it.">
+<meta name="twitter:description" content="We are offto a fresh start. It is going to be a great year. I can feel it.          document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }">
   
   
     <link rel="icon" href="images/favicon.ico">
@@ -89,7 +89,25 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="We-are-off"><a href="#We-are-off" class="headerlink" title="We are off"></a>We are off</h2><p>to a fresh start. It is going to be a great year. I can feel it.</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     <footer class="article-footer">
@@ -98,7 +116,7 @@
           Edit
         </a>
       
-      <a data-url="https://quickytools.github.io/blog/2018/02/08/ready-set-go/" data-id="cjm6zzcss0005pk0kadv6a3dn" class="article-share-link">Share</a>
+      <a data-url="https://quickytools.github.io/blog/2018/02/08/ready-set-go/" data-id="cjn3ugh7p0007260ktpwf80yf" class="article-share-link">Share</a>
       
       
     </footer>
