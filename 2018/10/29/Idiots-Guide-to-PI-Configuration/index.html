@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Idiots Guide to Pi Configuration | quickytools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Beware of information hiddenin plain sight. A no-parking sign in a poorly lit area at night is fair warning for a tow truck to drag your unwilling vehicle to the yards. Let’s not even get to written p">
+<meta name="keywords" content="osx,raspberry-pi,pi-zero-w,idiocy,get-going">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Idiots Guide to Pi Configuration">
+<meta property="og:url" content="https://quickytools.github.io/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/index.html">
+<meta property="og:site_name" content="quickytools">
+<meta property="og:description" content="Beware of information hiddenin plain sight. A no-parking sign in a poorly lit area at night is fair warning for a tow truck to drag your unwilling vehicle to the yards. Let’s not even get to written p">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-29T20:56:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Idiots Guide to Pi Configuration">
+<meta name="twitter:description" content="Beware of information hiddenin plain sight. A no-parking sign in a poorly lit area at night is fair warning for a tow truck to drag your unwilling vehicle to the yards. Let’s not even get to written p">
+  
+  
+    <link rel="icon" href="images/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="//fonts.googleapis.com/css?family=Questrial" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59103304-11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-59103304-11');
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <p id="logo" class='quickytools logo'>quickytools</p>
+      
+        <p id="subtitle">Custom tech solutions on time every time</p>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="home-nav-logo" href="/blog/">
+          <img src="/blog/images/logo-96.png" alt="quickytools">
+        </a>
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://quickytools.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Idiots-Guide-to-PI-Configuration" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/" class="article-date">
+  <time datetime="2018-10-29T20:56:22.000Z" itemprop="datePublished">Oct 29 2018</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Idiots Guide to Pi Configuration
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Beware-of-information-hidden"><a href="#Beware-of-information-hidden" class="headerlink" title="Beware of information hidden"></a>Beware of information hidden</h2><p>in plain sight. A no-parking sign in a poorly lit area at night is fair warning for a tow truck to drag your unwilling vehicle to the yards. Let&#x2019;s not even get to written phone camera rules when you come to bail it out the next day&#x2026;</p>
+<a id="more"></a>
+<ol>
+<li>Flash a micro SD card using <a href="https://etcher.io/" target="_blank" rel="noopener">Etcher</a> with a <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">raspian</a> image<ol>
+<li>If necessary unplug and replug the SD adapter so the computer recognizes it</li>
+</ol>
+</li>
+<li>In the <code>/boot</code> directory create files<ol>
+<li><a href="/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/wpa_supplicant.conf" title="wpa_supplicant.conf">wpa_supplicant.conf</a> and specify your network<ol>
+<li>If you edit it using a text editor by renaming it with a <code>.txt</code> extension be sure to revert the name</li>
+<li>When reverting be sure to show file extensions or OSX will show <code>wpa_supplicant.conf</code> when it might really be <code>wpa_supplicant.conf.txt</code></li>
+</ol>
+</li>
+<li>Empty file named <code>ssh</code></li>
+</ol>
+</li>
+<li>Eject the SD card safely and plug it into a Pi with wireless capabilities</li>
+<li>Power up the Pi and give it time to boot</li>
+<li>SSH in with <code>pi@raspberrypi.local</code> pw <code>raspberry</code><ol>
+<li>Change the account password with <code>passwd pi</code></li>
+<li>Setup passwordless SSH by copying an SSH key with <code>ssh-copy-id</code> &#x2026;</li>
+</ol>
+</li>
+<li><span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f52e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f52e.png?v8">&#x1F52E;</span> <span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f353.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f353.png?v8">&#x1F353;</span></li>
+</ol>
+<h3 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h3><p>Setup fails if <code>wpa_supplicant.conf</code> exists in the <code>/boot</code> directory when the SD card is plugged back into a computer. Verify the network credentials and make sure the file is named <code>wpa_supplicant.conf</code> with extensions shown.</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a class="article-suggest-edit" href="https://github.com/hueachilles/quickytools-blog/tree/master/source/_posts/Idiots-Guide-to-PI-Configuration.md" target="_blank">
+          Edit
+        </a>
+      
+      <a data-url="https://quickytools.github.io/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/" data-id="cjnusaqlg0004rc0kjkixye5v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/get-going/">get-going</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/idiocy/">idiocy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/pi-zero-w/">pi-zero-w</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/raspberry-pi/">raspberry-pi</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2018/09/17/mitmproxy-for-the-Greater-Good/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mitmproxy on Sunday</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/">Idiots Guide to Pi Configuration</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/17/mitmproxy-for-the-Greater-Good/">mitmproxy on Sunday</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/08/17/Charting-JSON-with-Vega/">Charting JSON with Vega</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/02/08/ready-set-go/">Ready, set, go!</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <span id='footer-copyright' class='quickytools'>&copy; 2018 quickytools.</span>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
