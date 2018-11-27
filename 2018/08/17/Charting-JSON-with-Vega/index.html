@@ -31,10 +31,12 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59103304-11"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-59103304-11');
+    if (!/^https?:\/\/localhost/.test(document.location.href)) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-59103304-11');
+    }    
   </script>
 </head>
 </html>
@@ -70,7 +72,7 @@
         <section id="main"><article id="post-Charting-JSON-with-Vega" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/08/17/Charting-JSON-with-Vega/" class="article-date">
-  <time datetime="2018-08-17T21:11:59.000Z" itemprop="datePublished">Aug 17 2018</time>
+  <time datetime="2018-08-17T23:11:59.000Z" itemprop="datePublished">Aug 17 2018</time>
 </a>
     
   </div>
@@ -139,7 +141,7 @@
           Edit
         </a>
       
-      <a data-url="https://quickytools.github.io/blog/2018/08/17/Charting-JSON-with-Vega/" data-id="cjnusaqlb0003rc0kgkrbcnpi" class="article-share-link">Share</a>
+      <a data-url="https://quickytools.github.io/blog/2018/08/17/Charting-JSON-with-Vega/" data-id="cjp034u6700058mgjq4g358kc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/data-visualization-vega-chart-graph/">data-visualization vega chart graph</a></li></ul>
@@ -179,6 +181,10 @@
     <h3 class="widget-title">Recent</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2018/11/27/Effortless-Themes/">Effortless Themes</a>
+          </li>
         
           <li>
             <a href="/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/">Idiots Guide to Pi Configuration</a>

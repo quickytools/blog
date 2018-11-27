@@ -31,10 +31,12 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59103304-11"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-59103304-11');
+    if (!/^https?:\/\/localhost/.test(document.location.href)) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-59103304-11');
+    }    
   </script>
 </head>
 </html>
@@ -70,7 +72,7 @@
         <section id="main"><article id="post-mitmproxy-for-the-Greater-Good" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/09/17/mitmproxy-for-the-Greater-Good/" class="article-date">
-  <time datetime="2018-09-18T00:45:54.000Z" itemprop="datePublished">Sep 17 2018</time>
+  <time datetime="2018-09-18T02:45:54.000Z" itemprop="datePublished">Sep 17 2018</time>
 </a>
     
   </div>
@@ -132,7 +134,7 @@
           Edit
         </a>
       
-      <a data-url="https://quickytools.github.io/blog/2018/09/17/mitmproxy-for-the-Greater-Good/" data-id="cjnusaqlh0005rc0kg7wg0xre" class="article-share-link">Share</a>
+      <a data-url="https://quickytools.github.io/blog/2018/09/17/mitmproxy-for-the-Greater-Good/" data-id="cjp034u6900078mgjt2sptv6k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/debugging/">debugging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/development/">development</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/get-going/">get-going</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/mitmproxy/">mitmproxy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/mobile-networking/">mobile-networking</a></li></ul>
@@ -172,6 +174,10 @@
     <h3 class="widget-title">Recent</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2018/11/27/Effortless-Themes/">Effortless Themes</a>
+          </li>
         
           <li>
             <a href="/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/">Idiots Guide to Pi Configuration</a>

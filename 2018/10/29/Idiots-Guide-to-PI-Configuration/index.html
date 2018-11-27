@@ -8,14 +8,14 @@
   <title>Idiots Guide to Pi Configuration | quickytools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Beware of information hiddenin plain sight. A no-parking sign in a poorly lit area at night is fair warning for a tow truck to drag your unwilling vehicle to the yards. Let’s not even get to written p">
-<meta name="keywords" content="osx,raspberry-pi,pi-zero-w,idiocy,get-going">
+<meta name="keywords" content="get-going,osx,raspberry-pi,pi-zero-w,idiocy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Idiots Guide to Pi Configuration">
 <meta property="og:url" content="https://quickytools.github.io/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/index.html">
 <meta property="og:site_name" content="quickytools">
 <meta property="og:description" content="Beware of information hiddenin plain sight. A no-parking sign in a poorly lit area at night is fair warning for a tow truck to drag your unwilling vehicle to the yards. Let’s not even get to written p">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-29T20:56:22.000Z">
+<meta property="og:updated_time" content="2018-11-27T03:08:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Idiots Guide to Pi Configuration">
 <meta name="twitter:description" content="Beware of information hiddenin plain sight. A no-parking sign in a poorly lit area at night is fair warning for a tow truck to drag your unwilling vehicle to the yards. Let’s not even get to written p">
@@ -31,10 +31,12 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59103304-11"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-59103304-11');
+    if (!/^https?:\/\/localhost/.test(document.location.href)) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-59103304-11');
+    }    
   </script>
 </head>
 </html>
@@ -70,7 +72,7 @@
         <section id="main"><article id="post-Idiots-Guide-to-PI-Configuration" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/" class="article-date">
-  <time datetime="2018-10-29T20:56:22.000Z" itemprop="datePublished">Oct 29 2018</time>
+  <time datetime="2018-10-29T22:56:22.000Z" itemprop="datePublished">Oct 29 2018</time>
 </a>
     
   </div>
@@ -107,7 +109,7 @@
 </li>
 <li>Eject the SD card safely and plug it into a Pi with wireless capabilities</li>
 <li>Power up the Pi and give it time to boot</li>
-<li>SSH in with <code>pi@raspberrypi.local</code> pw <code>raspberry</code><ol>
+<li>SSH in with <a href="mailto:`pi@raspberrypi.local" target="_blank" rel="noopener">`pi@raspberrypi.local</a><code>pw</code>raspberry`<ol>
 <li>Change the account password with <code>passwd pi</code></li>
 <li>Setup passwordless SSH by copying an SSH key with <code>ssh-copy-id</code> &#x2026;</li>
 </ol>
@@ -142,7 +144,7 @@
           Edit
         </a>
       
-      <a data-url="https://quickytools.github.io/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/" data-id="cjnusaqlg0004rc0kjkixye5v" class="article-share-link">Share</a>
+      <a data-url="https://quickytools.github.io/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/" data-id="cjp034u5x00018mgjxvjhyses" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/get-going/">get-going</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/idiocy/">idiocy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/pi-zero-w/">pi-zero-w</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/raspberry-pi/">raspberry-pi</a></li></ul>
@@ -152,6 +154,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/blog/2018/11/27/Effortless-Themes/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Effortless Themes
+        
+      </div>
+    </a>
   
   
     <a href="/blog/2018/09/17/mitmproxy-for-the-Greater-Good/" id="article-nav-older" class="article-nav-link-wrap">
@@ -173,6 +184,10 @@
     <h3 class="widget-title">Recent</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2018/11/27/Effortless-Themes/">Effortless Themes</a>
+          </li>
         
           <li>
             <a href="/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/">Idiots Guide to Pi Configuration</a>

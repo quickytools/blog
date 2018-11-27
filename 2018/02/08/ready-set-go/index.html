@@ -30,10 +30,12 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59103304-11"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-59103304-11');
+    if (!/^https?:\/\/localhost/.test(document.location.href)) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-59103304-11');
+    }    
   </script>
 </head>
 </html>
@@ -69,7 +71,7 @@
         <section id="main"><article id="post-ready-set-go" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/02/08/ready-set-go/" class="article-date">
-  <time datetime="2018-02-09T04:05:19.000Z" itemprop="datePublished">Feb 08 2018</time>
+  <time datetime="2018-02-09T06:05:19.000Z" itemprop="datePublished">Feb 08 2018</time>
 </a>
     
   </div>
@@ -116,7 +118,7 @@
           Edit
         </a>
       
-      <a data-url="https://quickytools.github.io/blog/2018/02/08/ready-set-go/" data-id="cjnusaqlk0007rc0kvw8wgl8j" class="article-share-link">Share</a>
+      <a data-url="https://quickytools.github.io/blog/2018/02/08/ready-set-go/" data-id="cjp034u6a00088mgj5viufr16" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,6 +151,10 @@
     <h3 class="widget-title">Recent</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2018/11/27/Effortless-Themes/">Effortless Themes</a>
+          </li>
         
           <li>
             <a href="/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/">Idiots Guide to Pi Configuration</a>
