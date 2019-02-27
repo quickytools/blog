@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Firing Up Push to Deploy | quickytools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Time escapes through a wormholewhen you spin on a gerbil wheel. There is nothing more wasteful than having to perform the same tasks again and again. Isn’t software supposed to handle the medium that">
+<meta name="keywords" content="build pipeline,ci,cd,automation,firebase,gitlab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Firing Up Push to Deploy">
+<meta property="og:url" content="https://quickytools.github.io/blog/2019/02/26/Firing-Up-Push-Deploy/index.html">
+<meta property="og:site_name" content="quickytools">
+<meta property="og:description" content="Time escapes through a wormholewhen you spin on a gerbil wheel. There is nothing more wasteful than having to perform the same tasks again and again. Isn’t software supposed to handle the medium that">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://quickytools.github.io/blog/2019/02/26/Firing-Up-Push-Deploy/firebase-project-setup.png">
+<meta property="og:image" content="https://quickytools.github.io/blog/2019/02/26/Firing-Up-Push-Deploy/deploy-fail.png">
+<meta property="og:image" content="https://quickytools.github.io/blog/2019/02/26/Firing-Up-Push-Deploy/login-ci-token.png">
+<meta property="og:updated_time" content="2019-02-27T02:41:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Firing Up Push to Deploy">
+<meta name="twitter:description" content="Time escapes through a wormholewhen you spin on a gerbil wheel. There is nothing more wasteful than having to perform the same tasks again and again. Isn’t software supposed to handle the medium that">
+<meta name="twitter:image" content="https://quickytools.github.io/blog/2019/02/26/Firing-Up-Push-Deploy/firebase-project-setup.png">
+  
+  
+    <link rel="icon" href="images/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="//fonts.googleapis.com/css?family=Questrial" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59103304-11"></script>
+  <script>
+    if (!/^https?:\/\/localhost/.test(document.location.href)) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-59103304-11');
+    }    
+  </script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <p id="logo" class="quickytools logo">quickytools</p>
+      
+        <p id="subtitle">Custom tech solutions on time every time</p>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="home-nav-logo" href="/blog/">
+          <img src="/blog/images/logo-96.png" alt="quickytools">
+        </a>
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://quickytools.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Firing-Up-Push-Deploy" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/02/26/Firing-Up-Push-Deploy/" class="article-date">
+  <time datetime="2019-02-27T02:41:18.000Z" itemprop="datePublished">Feb 26 2019</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Firing Up Push to Deploy
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Time-escapes-through-a-wormhole"><a href="#Time-escapes-through-a-wormhole" class="headerlink" title="Time escapes through a wormhole"></a>Time escapes through a wormhole</h2><p>when you spin on a gerbil wheel. There is nothing more wasteful than having to perform the same tasks again and again. Isn&#x2019;t software supposed to handle the medium that becomes tedium? Combine <a href="https://gitlab.com/" target="_blank" rel="noopener">Gitlab</a> and <a href="https://firebase.google.com" target="_blank" rel="noopener">Firebase</a> for the ultimate build pipeline when you develop the next greatest app and have the world like <span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f62e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f62e.png?v8">&#x1F62E;</span></p>
+<a id="more"></a>
+<h3 id="construction-worker-the-piping"><a href="#construction-worker-the-piping" class="headerlink" title=":construction_worker: the piping"></a><span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f477.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f477.png?v8">&#x1F477;</span> the piping</h3><ol>
+<li>Create new projects<ol>
+<li>Use Vue CLI and create a Vue project</li>
+<li>Create a <a href="https://console.firebase.google.com" target="_blank" rel="noopener">Firebase project</a></li>
+<li>Create a new project on Gitlab</li>
+</ol>
+</li>
+<li>Push the <a href="https://gitlab.com/quickytools-blog/gitlab-firebase-ci-cd/commit/fec451751f2d4fe2accbf4e80846491cd5fe8bff" target="_blank" rel="noopener">initial commit</a> to Gitlab (set git remote origin as necessary)</li>
+<li>Initialize Firebase in the Vue project <img src="/blog/2019/02/26/Firing-Up-Push-Deploy/firebase-project-setup.png"><ol>
+<li>The screenshot shows Firebase Functions is included during creation which requires additional effort in the CI script later</li>
+<li>If your Firebase project doesn&#x2019;t show in the select default step choose <code>don&apos;t setup a default project</code> and manually set it later</li>
+<li>Remember the public directory (<code>dist</code> in screenshot) for the CI script later</li>
+</ol>
+</li>
+<li>Prep CI+CD<ol>
+<li>Add <a href="https://gitlab.com/quickytools-blog/gitlab-firebase-ci-cd/blob/master/package.json#L10" target="_blank" rel="noopener">deploy command</a> to <code>package.json</code></li>
+<li>Create <code>.gitlab-ci.yml</code> similar to <a href="https://gitlab.com/quickytools-blog/gitlab-firebase-ci-cd/blob/master/.gitlab-ci.yml" target="_blank" rel="noopener">this</a><ol>
+<li><a href="https://gitlab.com/quickytools-blog/gitlab-firebase-ci-cd/blob/master/.gitlab-ci.yml#L3" target="_blank" rel="noopener">cache</a> loads <code>node_modules</code> and <code>functions/node_modules</code> before each job if caches exist</li>
+<li><a href="https://gitlab.com/quickytools-blog/gitlab-firebase-ci-cd/blob/master/.gitlab-ci.yml#L9" target="_blank" rel="noopener">build-production</a> installs dependencies and builds the Vue app for release</li>
+<li><a href="https://gitlab.com/quickytools-blog/gitlab-firebase-ci-cd/blob/master/.gitlab-ci.yml#L23" target="_blank" rel="noopener">test-production</a> runs unit tests</li>
+<li><a href="https://gitlab.com/quickytools-blog/gitlab-firebase-ci-cd/blob/master/.gitlab-ci.yml#L35" target="_blank" rel="noopener">deploy-production</a> deploys to Firebase hosting</li>
+<li><code>artifacts</code> are outputs of a job and <code>dependencies</code> are previous jobs whose artifacts are used</li>
+<li><code>artifacts</code> must set <code>paths</code> to the public directory (<code>dist</code> in screenshot)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Commit and push the changes<ol>
+<li>GitLab CI should pass the build and test jobs but fail the deploy job like follows <img src="/blog/2019/02/26/Firing-Up-Push-Deploy/deploy-fail.png"></li>
+<li>The error in the screenshot is <code>Too many arguments</code> because a variable is not yet set</li>
+</ol>
+</li>
+<li>Retrieve and set a Firebase CI token<ol>
+<li>If the Firebase project is not set do so with <code>firebase use &lt;project-id&gt;</code> where <code>&lt;project-id&gt;</code> can be found on the Firebase console</li>
+<li>Follow instructions after <code>firebase login:ci</code> for a CI token <img src="/blog/2019/02/26/Firing-Up-Push-Deploy/login-ci-token.png"></li>
+<li>Set the token under the project&#x2019;s Settings &gt; CI/CD &gt; Environment Variables <code>FIREBASE_DEPLOY_TOKEN</code> </li>
+</ol>
+</li>
+<li>Rerun the deploy job only like <a href="https://gitlab.com/quickytools-blog/gitlab-firebase-ci-cd/-/jobs" target="_blank" rel="noopener">pressing Retry on #162819683</a><ol>
+<li>The pipeline should run to completion successfully and deploy to your Firebase hosting instance</li>
+</ol>
+</li>
+</ol>
+<p>Now go forth and set the <span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f30e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f30e.png?v8">&#x1F30E;</span> on <span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png?v8">&#x1F525;</span><span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png?v8">&#x1F525;</span><span class="github-emoji" style="display:inline;vertical-align:bottom;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png?v8">&#x1F525;</span></p>
+<h4 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h4><ol>
+<li><a href="https://gitlab.com/quickytools-blog/gitlab-firebase-ci-cd" target="_blank" rel="noopener">Source on Gitlab</a></li>
+<li><a href="https://quickytools-gitlab-ci-cd.firebaseapp.com/" target="_blank" rel="noopener">Deployed site on Firebase</a></li>
+</ol>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a class="article-suggest-edit" href="https://github.com/hueachilles/quickytools-blog/tree/master/source/_posts/Firing-Up-Push-Deploy.md" target="_blank">
+          Edit
+        </a>
+      
+      <a data-url="https://quickytools.github.io/blog/2019/02/26/Firing-Up-Push-Deploy/" data-id="cjsmlgqlk0001zffz5nksfhw6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/automation/">automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/build-pipeline/">build pipeline</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/cd/">cd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ci/">ci</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/firebase/">firebase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/gitlab/">gitlab</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2018/11/27/Effortless-Themes/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Effortless Themes</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/02/26/Firing-Up-Push-Deploy/">Firing Up Push to Deploy</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/11/27/Effortless-Themes/">Effortless Themes</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/10/29/Idiots-Guide-to-PI-Configuration/">Idiots Guide to Pi Configuration</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/17/mitmproxy-for-the-Greater-Good/">mitmproxy on Sunday</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/08/17/Charting-JSON-with-Vega/">Charting JSON with Vega</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <span id="footer-copyright" class="quickytools">&copy; 2019 quickytools.</span>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
